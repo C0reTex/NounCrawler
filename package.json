@@ -1,0 +1,29 @@
+{
+  "name": "noungrawler",
+  "version": "1.0.0",
+  "description": "Search The noun project for icons licensed under public domain",
+  "main": "index.js",
+  "dependencies": {
+    "command-line-args": "^4.0.6",
+    "command-line-arguments": "^1.1.1",
+    "the-noun-project": "^2.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node index.js -s"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/C0reTex/NounGrawler.git"
+  },
+  "keywords": [
+    "Icons",
+    "Crawler"
+  ],
+  "author": "Tobias Jäger",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/C0reTex/NounGrawler/issues"
+  },
+  "homepage": "https://github.com/C0reTex/NounGrawler#readme"
+}

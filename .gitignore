@@ -1,3 +1,6 @@
+# NounCrawler application specific
+config.json
+
 # Logs
 logs
 *.log
