@@ -1,5 +1,7 @@
 # NounCrawler application specific
 config.json
+.tern-port
+result*
 
 # Logs
 logs
