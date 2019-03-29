@@ -3,6 +3,7 @@ var moduleName = 'nounGrawler';
 const NounProject = require('the-noun-project');
 const fs          = require('fs');
 const cmdLine     = require('command-line-args');
+const open 	  = require('open');
 
 // Get command line arguments
 const cmdOptions = [
@@ -46,11 +47,36 @@ const nounProject = new NounProject({
 // Search for a term
 
 nounProject.getIconsByTerm(options.searchTerm, {limit_to_public_domain : options.limit_to_public_domain},
-    (err, data) => {
-      if (!err) {
-        console.log(data);
-      }
-    });
+	(err, data) => {
+		if (!err) {
+			var html = `
+				<html>
+				<header>
+				<title>The Noun Crawler</title>
+				</header>
+				<body>
+				`;
+
+			data['icons'].forEach(function(icon){
+				var img = '<a href="'+icon['icon_url']+'" target="_blank"><img src="'+icon['preview_url']+'" title="'+icon['attributiona']+'"></a>';
+				html += img;
+			});
+
+			html += `
+				</body>
+				</html>
+				`;
+			fs.writeFile('output.html', html, function(err, data) {
+				if (err) console.log(err);
+				open('output.html');
+			});
+		}
+	});
+
+// create html
+
+
+
 
 function commandLineArguments (callback) {
   for (var i = 2; i < process.argv.length; i++){
